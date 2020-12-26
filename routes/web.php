@@ -21,6 +21,9 @@ Route::get('/', function () {
 Route::group(['prefix'=>'admin'],function(){
 
     
+    Route::get('login','LoginController@create');
+    Route::post('login','LoginController@store');
+    Route::get('logout','LoginController@logout');
 });
 
 
