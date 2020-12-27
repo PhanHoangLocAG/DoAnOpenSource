@@ -31,6 +31,7 @@ class SanPhamController extends Controller
 
     public function index()
     {
+        
         $sanpham=SanPham::all();
         return view('admin.sanpham.danhsach',['sanpham'=>$sanpham]);
     }
