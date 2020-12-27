@@ -115,7 +115,11 @@ class SanPhamController extends Controller
         if($kiemtra){
             return redirect('admin/sanpham/them')->with('thongbaoloi','Kiểm tra lại màu sắc và kích thước và tên sản phẩm nó đã tồn tại');
         }
-         
+        if($request->soluong<=0)
+        {
+            return redirect('admin/sanpham/them')->with('thongbaoloi','Số lượng không được bé hơn 0');
+
+        }
         $sanpham=new SanPham();
         $sanpham->masanpham=$request->masanpham;
         $sanpham->tensanpham=$request->tensanpham;
