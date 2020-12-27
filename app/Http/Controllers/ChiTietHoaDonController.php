@@ -143,7 +143,7 @@ class ChiTietHoaDonController extends Controller
     public function edit($id)
     {
         $hoadon = HoaDon::find($id);
-        $hoadon->thanhtoan = 1;
+        $hoadon->thanhtoan = 0;
         $hoadon->save();
         return  redirect('admin/hoadon/danhsach')->with('thongbao','Cập nhật thành công');
     }
