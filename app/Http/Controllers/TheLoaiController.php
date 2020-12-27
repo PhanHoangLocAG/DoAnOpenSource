@@ -116,7 +116,7 @@ class TheLoaiController extends Controller
         $theloai=TheLoai::find($id);
         $this->validate($request,
             [
-                'tenloai'=>'required|min:3|max:50',
+                'tenloai'=>'required|min:3|max:50|unique:theloai,tenloai,'.$id.',maloai',
                 'nhasanxuat'=>'required|min:5|max:50',
                 'donvilaprap'=>'required|min:5|max:50'
             ],
