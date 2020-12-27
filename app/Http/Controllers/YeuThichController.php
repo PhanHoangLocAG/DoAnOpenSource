@@ -96,7 +96,7 @@ class YeuThichController extends Controller
     public function destroy($id,$masp)
     {
         $sanpham=YeuThich::find($id)->where('masanpham','=',$masp);
-        
+        $sanpham->delete();
         return redirect('frontend/yeuthich/'.$id);
     }
 
