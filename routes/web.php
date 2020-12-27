@@ -39,6 +39,7 @@ Route::group(['prefix'=>'frontend'],function(){
     Route::post('update/{ma}','KhachHangController@updatePass');
     Route::get('trangchu','SanPhamController@ShowProduct');
     Route::get('detailProduct/{ma}','SanPhamController@show');
+    Route::post('binhluan/{makh}/{masanpham}','BinhLuanController@addComment');
 });
 
 Route::get('sentmail','MailController@basic_email');
