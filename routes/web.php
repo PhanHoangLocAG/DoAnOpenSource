@@ -45,6 +45,12 @@ Route::group(['prefix'=>'frontend'],function(){
     Route::get('add/{ma}/{mkh}','GioHangController@AddcartFromWish');
     Route::get('deleteCart/{ma}','GioHangController@Deletecart');
     Route::get('editCart','GioHangController@UpdateCart');
+
+    Route::get('dathang/{ma}' , 'ChiTietHoaDonController@index');
+    Route::post('muahang/{ma}' , 'ChiTietHoaDonController@store');
+    Route::get('donhang/{ma}' , 'ChiTietHoaDonController@show');
+    Route::get('huydon/{ma}' , 'ChiTietHoaDonController@destroy');
+
 });
 
 Route::get('sentmail','MailController@basic_email');
