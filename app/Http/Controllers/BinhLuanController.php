@@ -12,6 +12,14 @@ class BinhLuanController extends Controller
         if($kq){
          $binhluan = new BinhLuan();
          $binhluan->makhachhang = $makh;
+         $a = str_replace(["<p>","</p>"," ","&nbsp;"],"",$req->content);
+         
+         if($a==0)
+         { 
+            return redirect()->back()->with('thongbaoloi', 'Nội dung bình luận không được để trống');
+         }
+
+         
          $binhluan->noidung = $req->content;
          $binhluan->masanpham = $masp;
          $binhluan->save();
