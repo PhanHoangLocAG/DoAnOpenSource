@@ -58,11 +58,13 @@ class ChiTietHoaDonController extends Controller
     public function store(Request $request, $id)
     {
         $this->validate($request,[
-            'ten' => 'bail|required',         
+            'ten' => 'bail|required',
+            'diachi' => 'bail|required', 
             'email' => 'bail|required',
             'sodienthoai' => 'bail|required',
         ],[
-            'ten.required' => 'Tên không được bỏ trống',     
+            'ten.required' => 'Tên không được bỏ trống',
+            'diachi.required' => 'Địa chỉ không được bỏ trống',        
             'email.required' => 'Email không được bỏ trống',
             'sodienthoai.required' => 'Số điện thoại không được bỏ trống'
         ]);
