@@ -85,7 +85,11 @@ class NhanVienController extends Controller
            
         return redirect('admin/nhanvien/them')->with('thongbaoloi','Nhân viên phải đủ 18 tuổi trở lên ');   
        }
-        if($request->passwordconfirm==""){
+       if($request->passwordconfirm!=""){
+        if($request->password!=$request->passwordconfirm){
+            return redirect('admin/nhanvien/them')->with('thongbaoloi','Mật khẩu xác nhận phải trùng với mật khẩu ');
+        }
+       }else{
         return redirect('admin/nhanvien/them')->with('thongbaoloi','Mật khẩu xác nhận phải không được bỏ trống');
 
        }
