@@ -122,7 +122,7 @@ class KhachHangController extends Controller
             'ten'=>'bail|required',
             'sodienthoai'=>'bail|min:10|max:15|required|unique:khachhang,sodienthoai,'.$id.',chungminhnhandan',
             'ngaysinh'=>'bail|required',
-            'email'=>'bail|required',
+            'email'=>'bail|required|unique:khachhang,email,'.$id.',chungminhnhandan',
             'diachi'=>'bail|required'
         ],
         [
