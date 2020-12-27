@@ -45,7 +45,7 @@
                     <label >Chọn mức giá:</label>
                 </div>
                 <div class="checkbox">
-                    <label style="margin-left: 30px;"><a style="color: blue;" href="frontend/timkiemgia/{{$ten}}/2"> Dưới 5 triệu </a></label>
+                    <label style="margin-left: 30px;"><a style="color: blue;" href="frontend/timkiemgia/{{$ten}}/1"> Dưới 5 triệu </a></label>
                 </div>
                 <div class="checkbox">
                     <label style="margin-left: 30px;"><a style="color: blue;" href="frontend/timkiemgia/{{$ten}}/2"> Từ 5-10 triệu</a></label>
