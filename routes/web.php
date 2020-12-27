@@ -17,13 +17,26 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
+Route::get('login',function(){
+    return view('admin.login');
+});
 Route::group(['prefix'=>'admin'],function(){
 
     
     Route::get('login','LoginController@create');
     Route::post('login','LoginController@store');
     Route::get('logout','LoginController@logout');
+
+
+    Route::group(['prefix'=>'hoadon'],function(){
+
+        Route::middleware(['login'])->group(function () {
+            Route::get('danhsach','ChiTietHoaDonController@listInvoice');
+            Route::get('edit/{ma}','ChiTietHoaDonController@edit');
+            Route::get('danhsachthanhtoan','ChiTietHoaDonController@listInvoiced');
+        });
+    });
+
 });
 
 
