@@ -24,6 +24,20 @@ Route::group(['prefix'=>'admin'],function(){
     Route::get('login','LoginController@create');
     Route::post('login','LoginController@store');
     Route::get('logout','LoginController@logout');
+    ///cap nhat san pham
+    Route::group(['prefix'=>'sanpham'],function(){
+    Route::middleware(['login'])->group(function () {
+        Route::get('them','SanPhamController@create');
+        Route::post('them','SanPhamController@store');
+        Route::get('xoa/{ma}','SanPhamController@destroy');
+        Route::get('sua/{ma}','SanPhamController@edit');
+        Route::post('sua/{ma}','SanPhamController@update');
+        Route::get('danhsach','SanPhamController@index');
+    });
+
+});
+
+
 });
 
 
