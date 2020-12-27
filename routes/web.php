@@ -17,13 +17,29 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
+Route::get('login',function(){
+    return view('admin.login');
+});
 Route::group(['prefix'=>'admin'],function(){
 
     
     Route::get('login','LoginController@create');
     Route::post('login','LoginController@store');
     Route::get('logout','LoginController@logout');
+    Route::group(['prefix'=>'chucvu'],function(){
+        Route::middleware(['login'])->group(function () {
+            Route::get('them','ChucVuController@create');
+            Route::post('them','ChucVuController@store');
+            Route::get('xoa/{ma}','ChucVuController@destroy');
+            Route::get('sua/{ma}','ChucVuController@edit');
+            Route::post('sua/{ma}','ChucVuController@update');
+            Route::get('danhsach','ChucVuController@index');
+        });
+    });
+
+
+
+
 });
 
 
