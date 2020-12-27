@@ -93,10 +93,10 @@ class ChucVuController extends Controller
     {
         $this->validate($request,
         [
-            'tenchucvu'=>'min:5|max:50|required'
+            'tenchucvu'=>'unique:ChucVu|min:5|max:50|required'
         ],
         [
-            
+            'tenchucvu.unique'=>'Tên chức vụ không được trùng',
             'tenchucvu.min'=>'Tên chức vụ không được ít hơn 5 kí tự và lớn hơn 50 kí tự',
             'tenchucvu.max'=>'Tên chức vụ không được ít hơn 5 kí tự và lớn hơn 50 kí tự',
             'tenchucvu.required'=>'Tên chức vụ không được bỏ trống'
