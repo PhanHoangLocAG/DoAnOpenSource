@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\DB;
 
 class SanPhamController extends Controller
 {
-      /**
+    /*
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
@@ -31,7 +31,7 @@ class SanPhamController extends Controller
 
     public function index()
     {
-        
+
         $sanpham=SanPham::all();
         return view('admin.sanpham.danhsach',['sanpham'=>$sanpham]);
     }
@@ -413,7 +413,6 @@ class SanPhamController extends Controller
             $branch=TheLoai::all();
             return view('frontend.timkiem.newProduct',['branch'=>$branch,'newProduct'=>$sanpham,'ten'=>$ten]);
     }
-
 
 }
   

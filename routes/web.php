@@ -107,6 +107,16 @@ Route::group(['prefix'=>'admin'],function(){
 
 Route::group(['prefix'=>'frontend'],function(){
     
+    Route::get('dangnhap','KhachHangController@formdangnhap');
+    Route::post('dangnhap','KhachHangController@dangnhap');
+    Route::get('dangky','KhachHangController@create');
+    Route::post('dangky','KhachHangController@store');
+    Route::get('edit/{ma}','KhachHangController@edit');
+    Route::get('dangxuat','KhachHangController@dangxuat');
+    Route::post('sua/{ma}','KhachHangController@update');
+    Route::post('update/{ma}','KhachHangController@updatePass');
+    Route::get('trangchu','SanPhamController@ShowProduct');
+    Route::get('detailProduct/{ma}','SanPhamController@show');
 });
 
 Route::get('sentmail','MailController@basic_email');
