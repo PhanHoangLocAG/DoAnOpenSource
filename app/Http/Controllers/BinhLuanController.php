@@ -12,7 +12,7 @@ class BinhLuanController extends Controller
         if($kq){
          $binhluan = new BinhLuan();
          $binhluan->makhachhang = $makh;
-         $a = str_replace(["<p>","</p>"," ","&nbsp;"],"",$req->content);
+         $a = strlen(str_replace(["<p>","</p>"," ","&nbsp;"],"",$req->content));
          
          if($a==0)
          { 
