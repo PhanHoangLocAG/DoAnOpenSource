@@ -144,6 +144,9 @@ Route::group(['prefix'=>'frontend'],function(){
     Route::get('timkiemcaodenthap/{ten}','SanPhamController@searchPriceHightToLow');
     Route::get('timkiemthapdencao/{ten}','SanPhamController@searchPriceLowToHight');
 
+
+    Route::post('binhluan/{makh}/{masanpham}','BinhLuanController@addComment');
+
 });
 
 Route::get('sentmail','MailController@basic_email');
