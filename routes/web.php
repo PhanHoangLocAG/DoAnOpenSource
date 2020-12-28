@@ -118,6 +118,7 @@ Route::group(['prefix'=>'frontend'],function(){
     Route::get('trangchu','SanPhamController@ShowProduct');
     Route::get('detailProduct/{ma}','SanPhamController@show');
 
+
     
     Route::get('giohang','GioHangController@index');
     Route::get('add/{ma}','GioHangController@Addcart');
@@ -133,6 +134,15 @@ Route::group(['prefix'=>'frontend'],function(){
     Route::get('yeuthich/{ma}','YeuThichController@show');
     Route::get('themyeuthich/{ma}/{masp}','YeuThichController@store');
     Route::get('xoayeuthich/{ma}/{masp}','YeuThichController@destroy');
+
+
+    Route::post('timkiem','SanPhamController@search');
+    Route::get('timkiemloai/{ten}/{maloai}','SanPhamController@searchType');
+    Route::get('timkiemgia/{ten}/{gia}','SanPhamController@searchPrice');
+    Route::get('timkiemkhuyenmai/{ten}','SanPhamController@searchDiscount');
+    Route::get('timkiemsanphammoi/{ten}','SanPhamController@searchNewProduct');
+    Route::get('timkiemcaodenthap/{ten}','SanPhamController@searchPriceHightToLow');
+    Route::get('timkiemthapdencao/{ten}','SanPhamController@searchPriceLowToHight');
 
 });
 
