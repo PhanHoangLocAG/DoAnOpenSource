@@ -17,9 +17,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
 Route::get('login',function(){
     return view('admin.login');
 });
+
 
 Route::group(['prefix'=>'admin'],function(){
 
@@ -27,6 +29,7 @@ Route::group(['prefix'=>'admin'],function(){
     Route::get('login','LoginController@create');
     Route::post('login','LoginController@store');
     Route::get('logout','LoginController@logout');
+
 
 
 
@@ -87,7 +90,17 @@ Route::group(['prefix'=>'admin'],function(){
 
     }); 
 
-
+    
+    Route::group(['prefix'=>'nhanvien'],function(){
+        Route::middleware(['login'])->group(function () {
+            Route::get('them','NhanVienController@create');
+            Route::post('them','NhanVienController@store');
+            Route::get('xoa/{ma}','NhanVienController@destroy');
+            Route::get('sua/{ma}','NhanVienController@edit');
+            Route::post('sua/{ma}','NhanVienController@update');
+            Route::get('danhsach','NhanVienController@index');
+        });
+    });
 
 });
 
