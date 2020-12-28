@@ -117,6 +117,7 @@ Route::group(['prefix'=>'frontend'],function(){
     Route::post('update/{ma}','KhachHangController@updatePass');
     Route::get('trangchu','SanPhamController@ShowProduct');
     Route::get('detailProduct/{ma}','SanPhamController@show');
+
     
     Route::get('giohang','GioHangController@index');
     Route::get('add/{ma}','GioHangController@Addcart');
@@ -128,6 +129,10 @@ Route::group(['prefix'=>'frontend'],function(){
     Route::post('muahang/{ma}' , 'ChiTietHoaDonController@store');
     Route::get('donhang/{ma}' , 'ChiTietHoaDonController@show');
     Route::get('huydon/{ma}' , 'ChiTietHoaDonController@destroy');
+
+    Route::get('yeuthich/{ma}','YeuThichController@show');
+    Route::get('themyeuthich/{ma}/{masp}','YeuThichController@store');
+    Route::get('xoayeuthich/{ma}/{masp}','YeuThichController@destroy');
 
 });
 
