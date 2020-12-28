@@ -52,7 +52,7 @@ class Cart {
         $this->totalPrice -= $this->products[$id]['price'];
 
         $this->products[$id]['quantity'] = $quanty;
-        $this->products[$id]['price'] = $quanty * $this->products[$id]['productInfo']->giaban;
+        $this->products[$id]['price'] =  $quanty * $this->products[$id]['productInfo']->giaban;
 
         
         $this->totalQuantity += $this->products[$id]['quantity'];

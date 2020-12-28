@@ -117,6 +117,12 @@ Route::group(['prefix'=>'frontend'],function(){
     Route::post('update/{ma}','KhachHangController@updatePass');
     Route::get('trangchu','SanPhamController@ShowProduct');
     Route::get('detailProduct/{ma}','SanPhamController@show');
+    
+    Route::get('giohang','GioHangController@index');
+    Route::get('add/{ma}','GioHangController@Addcart');
+    Route::get('add/{ma}/{mkh}','GioHangController@AddcartFromWish');
+    Route::get('deleteCart/{ma}','GioHangController@Deletecart');
+    Route::get('editCart','GioHangController@UpdateCart');
 });
 
 Route::get('sentmail','MailController@basic_email');
