@@ -12,8 +12,7 @@ use Illuminate\Http\Request;
 use Session;
 class ChiTietHoaDonController extends Controller
 {
-    
-    /**
+     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
@@ -38,12 +37,6 @@ class ChiTietHoaDonController extends Controller
         return view('admin.donhang.hoadon',['hoadon'=>$hoadon]);
     }
     
-    public function listInvoiced()
-    {
-        $hoadon = HoaDon::getInvoiced();
-        //dd($hoadon);
-        return view('admin.donhang.hoadonthanhtoan',['hoadon'=>$hoadon]);
-    }
 
     public function create()
     {
@@ -60,12 +53,16 @@ class ChiTietHoaDonController extends Controller
     {
         $this->validate($request,[
             'ten' => 'bail|required',
+
             'diachi' => 'bail|required',
+
             'email' => 'bail|required',
             'sodienthoai' => 'bail|required',
         ],[
             'ten.required' => 'Tên không được bỏ trống',
+
             'diachi.required' => 'Địa chỉ không được bỏ trống',
+
             'email.required' => 'Email không được bỏ trống',
             'sodienthoai.required' => 'Số điện thoại không được bỏ trống'
         ]);
@@ -185,5 +182,6 @@ class ChiTietHoaDonController extends Controller
         }
 
     }
+
 
 }
